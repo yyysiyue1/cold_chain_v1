@@ -74,17 +74,11 @@
 - TODO：其他贡献者可以将模型加入本系统直接实现半小时动态读取数据并处理后写入数据再预警的一条龙服务
   - 重要函数：
   - 1、execute_prediction_unit(row, food_info, engine, predictor_cache)
-      """
-      统一预测调度单元：根据食品分类执行专属模型预测。
-      predictor_cache 形如：{'tvbn': TVBNPredictor(...)}。
-      返回：list[dict]，可能为空。
-      """
-        food_class_code = food_info.get("FoodClassificationCode")
-        records = []
-        if food_class_code == 'C09006':  # 小龙虾
-            tvbn_predictor = predictor_cache.get('crayfish_tvbn')
-        #可以在这里加别的 elif ==  ''：
-               调用其他模型
+   -  <img width="720" height="303" alt="image" src="https://github.com/user-attachments/assets/4c64f8ec-a829-4850-94ee-7cfb84da2f65" />
+    - 下面这里可以加elif判断是否为别的食品
+    -  <img width="1167" height="86" alt="image" src="https://github.com/user-attachments/assets/51c061e7-382b-49a8-8b19-0d52b8735616" />
+
+
                                      
 -  更具体的可以去prediction_logic.py中找见该函数理解模仿写
 - 2、find_previous_abnormal_value(order_number, rec_time, tra_code, order_tra_chain, engine, flag="化学")
@@ -104,6 +98,7 @@
 
 
 ---
+
 
 
 
