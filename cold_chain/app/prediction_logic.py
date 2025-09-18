@@ -690,7 +690,7 @@ def execute_prediction_unit(row, food_info, engine, predictor_cache):
     records = []
 
     if food_class_code == 'C09006':  # 小龙虾
-        tvbn_predictor = predictor_cache.get('tvbn')
+        tvbn_predictor = predictor_cache.get('crayfish_tvbn')
         if tvbn_predictor and getattr(tvbn_predictor, 'model', None) is not None:
             rec_time = row.get("RecTime")
             tra_code = row.get("TraCode")
@@ -1067,7 +1067,7 @@ def handle_prediction_results(monitor_df, food_df, engine):
 
     # 仅初始化一次 TVBN 模型，传递缓存字典
     predictor_cache = {
-        'tvbn': Crayfish_TVBNPredictor()  # 让它自己用同目录的 pkl
+        'crayfish_tvbn': Crayfish_TVBNPredictor()
     }
 
     results = []
