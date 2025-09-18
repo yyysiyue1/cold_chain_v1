@@ -20,7 +20,7 @@
 -   `database_setup.py`: 数据库初始化和表结构创建脚本。
 -   `config.ini`: 项目配置文件，用于数据库连接、API 密钥等设置。
 
--   models
+-   models/crayfish_tvbn
     -   `quick_check_tvbn.py` : 测试动态预测模型的文件
     -   `advanced_prediction_models.py`: 集中存放动态预测模型代码。
     -   `crayfish_tvbn_predictor.py`: `tvbn` 预测模型的调用方法。
@@ -79,6 +79,13 @@
       predictor_cache 形如：{'tvbn': TVBNPredictor(...)}。
       返回：list[dict]，可能为空。
       """
+        food_class_code = food_info.get("FoodClassificationCode")
+        records = []
+        if food_class_code == 'C09006':  # 小龙虾
+            tvbn_predictor = predictor_cache.get('crayfish_tvbn')
+        #可以在这里加别的 elif ==  ''：
+               调用其他模型
+                                     
 -  更具体的可以去prediction_logic.py中找见该函数理解模仿写
 - 2、find_previous_abnormal_value(order_number, rec_time, tra_code, order_tra_chain, engine, flag="化学")
 -     """
@@ -97,5 +104,6 @@
 
 
 ---
+
 
 
