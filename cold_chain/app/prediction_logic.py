@@ -683,7 +683,7 @@ def calculate_shelf_life_abnormal_duration(pro_date, rec_time, shelf_life):
 def execute_prediction_unit(row, food_info, engine, predictor_cache):
     """
     统一预测调度单元：根据食品分类执行专属模型预测。
-    predictor_cache 形如：{'tvbn': TVBNPredictor(...)}。
+    predictor_cache 形如：{'crayfish_tvbn': Crayfish_TVBNPredictor()}。
     返回：list[dict]，可能为空。
     """
     food_class_code = food_info.get("FoodClassificationCode")
