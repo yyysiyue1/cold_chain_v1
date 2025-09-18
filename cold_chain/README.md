@@ -82,15 +82,16 @@
                                      
 -  更具体的可以去prediction_logic.py中找见该函数理解模仿写
 - 2、find_previous_abnormal_value(order_number, rec_time, tra_code, order_tra_chain, engine, flag="化学")
--     """
-    查找上一条预测值（支持温度/湿度）。
-     """
-- 这个是找上一条数据的含量值 对于动态预测方法会有需要
+-  这个是找链上前一条数据的含量值 
+-   <img width="1160" height="605" alt="image" src="https://github.com/user-attachments/assets/27863b36-ef9b-4815-89c6-d52a016fe46c" />
+
+
 - 3、find_previous_monitor_time(order_number, rec_time, tra_code, order_tra_chain, engine):
     """
     查找上一条监测数据的时间。
     """
-- 这是寻找上一条数据的时间 对于动态预测的步长会有需要
+- 这是寻找链上前一条数据的时间 
+- <img width="1099" height="730" alt="image" src="https://github.com/user-attachments/assets/924b2967-a316-4e81-a7d2-5ad0a621f510" />
 
 ## 许可证 
 
@@ -98,6 +99,7 @@
 
 
 ---
+
 
 
 
